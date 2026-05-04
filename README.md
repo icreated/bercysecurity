@@ -49,7 +49,7 @@ Bercy helps MSSPs and security teams monitor SIEM activity on the go:
 
 Settings are persisted in `localStorage`.
 
-![Look and feel](./assets/look-and-feel.png)
+![Look and feel](src/assets/look-and-feel.png)
 
 ## Tech stack
 
