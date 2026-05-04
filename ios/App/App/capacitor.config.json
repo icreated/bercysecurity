@@ -1,0 +1,12 @@
+{
+	"appId": "com.bercysecurity.bercy",
+	"appName": "bercy",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"packageClassList": [
+		"AppPlugin",
+		"HapticsPlugin",
+		"KeyboardPlugin",
+		"StatusBarPlugin"
+	]
+}

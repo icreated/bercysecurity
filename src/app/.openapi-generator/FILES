@@ -1,0 +1,17 @@
+.gitignore
+README.md
+api.module.ts
+api/api.ts
+api/contracts.service.ts
+api/issues.service.ts
+api/user.service.ts
+configuration.ts
+encoder.ts
+git_push.sh
+index.ts
+model/comment.ts
+model/contract.ts
+model/issue.ts
+model/models.ts
+model/priority.ts
+variables.ts

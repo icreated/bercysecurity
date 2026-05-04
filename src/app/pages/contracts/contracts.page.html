@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>{{ i18n.t.contractsTitle }}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-list *ngFor="let contract of contractService.contracts">
+        <ion-item button [routerLink]="['/tabs/contract-detail', contract.id]">
+            <ion-icon [appContractType]="contract.type" slot="start" ></ion-icon>
+            <ion-label>
+                <h3>{{ contract.name }}</h3>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/issues"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ticket</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment value="comments" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="comments">
+        <ion-label>Commentaires</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="description">
+        <ion-label>Description</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="segment === 'comments'">
+    <ion-card>
+      <ion-card-header>
+        <ion-grid>
+          <ion-row class="ion-align-items-center">
+            <ion-col><ion-icon [appIssuePriority]="issue?.priority.value" size="large"></ion-icon></ion-col>
+            <ion-col><ion-card-subtitle>{{ issue?.priority.name }}</ion-card-subtitle></ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-card-title class="title" text-wrap>{{ issue?.subject }}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+
+    <app-comment *ngIf="isNewCommentOpened" [issue]="issue" [comment]="newComment"
+                 (close)="isNewCommentOpened = false"
+                 (save)="saveNewComment($event)">
+    </app-comment>
+
+    <ion-card *ngFor="let comment of comments">
+      <ion-card-header>
+        <ion-grid>
+          <ion-row class="ion-align-items-center">
+            <ion-col><ion-card-subtitle>{{ comment.sender }}</ion-card-subtitle></ion-col>
+            <ion-col><ion-card-subtitle>{{ comment.date }}</ion-card-subtitle></ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-text [innerText]="comment.text"></ion-text>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-fab *ngIf="!isNewCommentOpened" vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="createNewComment()" color="secondary">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ng-container>
+
+  <ng-container *ngIf="segment === 'description'">
+    <ion-card>
+      <ion-card-header>
+        <ion-grid>
+          <ion-row class="ion-align-items-center">
+            <ion-col><ion-icon [appIssuePriority]="issue?.priority.value" size="large"></ion-icon></ion-col>
+            <ion-col><ion-card-subtitle>{{ issue?.priority.name }}</ion-card-subtitle></ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-card-title class="title" text-wrap>{{ issue?.subject }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label>Catégorie</ion-label>
+            <ion-note slot="end" color="primary">{{ issue.category }}</ion-note>
+          </ion-item>
+          <ion-item>
+            <ion-label>Etat</ion-label>
+            <ion-note slot="end" color="primary">{{ issue.status | issueStatus }}</ion-note>
+          </ion-item>
+          <ion-item>
+            <ion-label>Date Création</ion-label>
+            <ion-note slot="end" color="primary">{{ issue.dateCreation }}</ion-note>
+          </ion-item>
+          <ion-item>
+            <ion-label>Date MAJ</ion-label>
+            <ion-note slot="end" color="primary">{{ issue.dateLastUpdate }}</ion-note>
+          </ion-item>
+          <ion-item>
+            <ion-label>Contrat</ion-label>
+            <ion-note slot="end" color="primary">{{ issue.contract }}</ion-note>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
+
+</ion-content>

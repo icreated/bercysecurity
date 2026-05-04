@@ -1,0 +1,36 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>{{ i18n.t.tabHome }}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="events">
+      <ion-icon name="pulse-outline"></ion-icon>
+      <ion-label>{{ i18n.t.tabEvents }}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="issues">
+      <ion-badge [appIssuePriority]="issueService.homeIssue.priority.value">{{ issueService.openIssues.length }}</ion-badge>
+      <ion-icon name="warning"></ion-icon>
+      <ion-label>{{ i18n.t.tabIssues }}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="assets">
+      <ion-icon name="server-outline"></ion-icon>
+      <ion-label>{{ i18n.t.tabAssets }}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="contracts">
+      <ion-icon name="albums"></ion-icon>
+      <ion-label>{{ i18n.t.tabContracts }}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="settings">
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-label>{{ i18n.t.tabSettings }}</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>

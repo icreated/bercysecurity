@@ -1,0 +1,126 @@
+// ── Section headers ─────────────────────────────────────────────────────
+.section-header {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  padding-top: 20px;
+  padding-bottom: 4px;
+}
+
+// ── Item icons ───────────────────────────────────────────────────────────
+.item-icon {
+  font-size: 1.3rem;
+  &.green  { color: #2dd36f; }
+  &.orange { color: #ffc409; }
+  &.danger { color: #eb445a; }
+  &.purple { color: #a78bfa; }
+  &.blue   { color: #4d8dff; }
+}
+
+// ── Font size buttons ────────────────────────────────────────────────────
+.font-size-btns {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+
+  .fs-btn {
+    background: #2a2c30;
+    border: 1px solid #3a3c40;
+    border-radius: 8px;
+    color: #888;
+    cursor: pointer;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    transition: all 0.15s;
+
+    &.lg { font-size: 1.1rem; }
+
+    &.active {
+      background: var(--ion-color-primary);
+      border-color: var(--ion-color-primary);
+      color: #fff;
+    }
+  }
+}
+
+// ── Language buttons ─────────────────────────────────────────────────────
+.lang-btns {
+  display: flex;
+  gap: 6px;
+
+  .lang-btn {
+    background: #2a2c30;
+    border: 1px solid #3a3c40;
+    border-radius: 8px;
+    color: #888;
+    cursor: pointer;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    transition: all 0.15s;
+
+    &.active {
+      background: var(--ion-color-primary);
+      border-color: var(--ion-color-primary);
+      color: #fff;
+    }
+  }
+}
+
+// ── Security score card ──────────────────────────────────────────────────
+.security-score-card {
+  margin: 8px 16px 4px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #1e2023, #1a1c1e);
+  border: 1px solid #2e3033;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+
+  .score-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 6px;
+  }
+
+  .score-value {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -2px;
+
+    .score-unit { font-size: 1rem; font-weight: 400; color: #666; }
+    &.score-high { color: #2dd36f; }
+    &.score-mid  { color: #ffc409; }
+    &.score-low  { color: #eb445a; }
+  }
+
+  .score-bar {
+    height: 6px;
+    background: #2e3033;
+    border-radius: 4px;
+    margin: 10px 0 8px;
+    overflow: hidden;
+
+    .score-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+      &.fill-high { background: #2dd36f; }
+      &.fill-mid  { background: #ffc409; }
+      &.fill-low  { background: #eb445a; }
+    }
+  }
+
+  .score-hint {
+    font-size: 0.75rem;
+    color: #666;
+    line-height: 1.4;
+  }
+}
+
+ion-list {
+  border-radius: 12px;
+}

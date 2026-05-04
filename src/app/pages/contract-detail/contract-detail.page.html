@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/contracts"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Contrat</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment value="description" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="description">
+        <ion-label>Description</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="settings">
+        <ion-label>Paramètres</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col><ion-icon [appContractType]="contract?.type" size="large"></ion-icon></ion-col>
+          <ion-col><ion-card-subtitle>{{ contract?.value }}</ion-card-subtitle></ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-card-title class="title" text-wrap>{{ contract?.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content *ngIf="segment === 'description'">
+      <ion-list>
+        <ion-item>
+          <ion-label>Société</ion-label>
+          <ion-note slot="end" color="primary">{{ contract?.company }}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Début</ion-label>
+          <ion-note slot="end" color="primary">{{ contract?.dateStart | date: "dd/MM/YYYY" }}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Fin</ion-label>
+          <ion-note slot="end" color="primary">{{ contract?.dateEnd | date: "dd/MM/YYYY"}}</ion-note>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+    <ion-card-content *ngIf="segment === 'settings'">
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Actions BercySecurity</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Email</ion-label>
+          <ion-toggle slot="end" color="primary"></ion-toggle>
+        </ion-item>
+        <ion-item>
+          <ion-label>SMS</ion-label>
+          <ion-toggle slot="end" color="primary"></ion-toggle>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Actions des Utilisateurs</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Email</ion-label>
+          <ion-toggle slot="end" color="primary"></ion-toggle>
+        </ion-item>
+        <ion-item>
+          <ion-label>SMS</ion-label>
+          <ion-toggle slot="end" color="primary"></ion-toggle>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

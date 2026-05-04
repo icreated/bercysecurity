@@ -1,0 +1,21 @@
+<ion-card>
+  <ion-card-header>
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col><ion-card-subtitle>{{ comment.sender }}</ion-card-subtitle></ion-col>
+        <ion-col><ion-card-subtitle>{{ comment.date }}</ion-card-subtitle></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-textarea clearOnEdit="true" rows="6" placeholder="Tapez le text ici ..." [(ngModel)]="comment.text">
+    </ion-textarea>
+    <section>
+      <ion-button size="small" shape="round" color="secondary" (click)="voidCommit()">Annuler</ion-button>
+      <ion-button size="small" shape="round" slot="end" (click)="saveComment()">Enregistrer</ion-button>
+    </section>
+  </ion-card-content>
+</ion-card>
+
+

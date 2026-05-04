@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <ion-icon name="server-outline"></ion-icon>
+      {{ i18n.t.assetsTitle }}
+    </ion-title>
+    <ion-badge *ngIf="assetService.criticalCount > 0" color="danger" slot="end" style="margin-right:12px">
+      {{ assetService.criticalCount }} {{ i18n.t.assetsAtRisk }}
+    </ion-badge>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <ion-item *ngFor="let asset of assetService.assets" lines="full">
+      <ion-icon [name]="assetService.typeIcon(asset.type)" slot="start" [color]="assetService.riskColor(asset.riskScore)"></ion-icon>
+      <ion-label>
+        <h2>{{ asset.hostname }}</h2>
+        <h3>{{ asset.ip }} · {{ asset.os }}</h3>
+        <p>
+          <ion-badge [color]="assetService.riskColor(asset.riskScore)">Risk {{ asset.riskScore }}/100</ion-badge>
+          &nbsp;
+          <ion-badge color="medium">{{ asset.contract }}</ion-badge>
+        </p>
+        <p *ngIf="asset.vulnerabilities > 0 || asset.openIssues > 0">
+          <ion-icon name="warning-outline" color="warning"></ion-icon>
+          {{ asset.vulnerabilities }} {{ i18n.t.assetsVulns }} · {{ asset.openIssues }} {{ i18n.t.assetsOpenIssues }}
+        </p>
+      </ion-label>
+      <ion-chip slot="end" [color]="assetService.riskColor(asset.riskScore)" outline>
+        {{ asset.criticality }}
+      </ion-chip>
+    </ion-item>
+  </ion-list>
+</ion-content>

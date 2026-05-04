@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "subject": "Rapport détections malveillantes — 23/06/2024 au 30/06/2024",
+    "dateCreation": "2024-06-23 08:30",
+    "dateLastUpdate": "2024-06-30 14:15",
+    "contract": "BH-STARK-INDUSTRIES",
+    "category": "Détection malveillante",
+    "priority": { "value": "P4", "name": "Modéré" },
+    "status": "WAITING"
+  },
+  {
+    "id": 2,
+    "subject": "CVE-2024-3400 (CVSS 10.0) — PAN-OS RCE sur 10.10.1.56",
+    "dateCreation": "2024-04-12 09:15",
+    "dateLastUpdate": "2024-04-13 11:20",
+    "category": "Vulnérabilité",
+    "contract": "LUNAR-STARK-INDUSTRIES",
+    "priority": { "value": "P3", "name": "Normal" },
+    "status": "WAITING"
+  },
+  {
+    "id": 3,
+    "subject": "Ransomware Ragnar Locker — chiffrement actif sur STARK-WS-042 (10.40.5.5)",
+    "dateCreation": "2024-04-03 02:47",
+    "dateLastUpdate": "2024-04-03 03:12",
+    "category": "Ransomware",
+    "contract": "LUNAR-STARK-INDUSTRIES",
+    "priority": { "value": "P1", "name": "Critique" },
+    "status": "OPEN"
+  },
+  {
+    "id": 4,
+    "subject": "Création tunnel VPN IPSec vers Azure (10.130.0.0/16)",
+    "dateCreation": "2024-03-15 10:50",
+    "dateLastUpdate": "2024-03-20 16:00",
+    "category": "Demande",
+    "contract": "FGT-STARK-INDUSTRIES-LYON",
+    "priority": { "value": "P3", "name": "Normal" },
+    "status": "CLOSED"
+  },
+  {
+    "id": 5,
+    "subject": "Brute-force SSH depuis 185.220.101.45 (TOR exit node) — 4 382 tentatives",
+    "dateCreation": "2024-04-10 01:23",
+    "dateLastUpdate": "2024-04-10 07:44",
+    "category": "Intrusion",
+    "contract": "FGT-STARK-INDUSTRIES-LYON",
+    "priority": { "value": "P2", "name": "Urgent" },
+    "status": "OPEN"
+  },
+  {
+    "id": 6,
+    "subject": "Phishing — credential harvesting ciblant tony.stark, pepper.potts, h.hogan",
+    "dateCreation": "2024-04-11 14:30",
+    "dateLastUpdate": "2024-04-11 16:05",
+    "category": "Phishing",
+    "contract": "BH-STARK-INDUSTRIES",
+    "priority": { "value": "P2", "name": "Urgent" },
+    "status": "OPEN"
+  },
+  {
+    "id": 7,
+    "subject": "Exfiltration DNS suspectée vers 94.142.247.3 (AS47517 — Russie)",
+    "dateCreation": "2024-04-12 23:11",
+    "dateLastUpdate": "2024-04-13 08:00",
+    "category": "Exfiltration",
+    "contract": "LUNAR-STARK-INDUSTRIES",
+    "priority": { "value": "P1", "name": "Critique" },
+    "status": "OPEN"
+  },
+  {
+    "id": 8,
+    "subject": "Scan interne massif depuis 10.20.4.87 — mouvement latéral suspecté",
+    "dateCreation": "2024-04-13 11:05",
+    "dateLastUpdate": "2024-04-13 11:30",
+    "category": "Reconnaissance",
+    "contract": "FGT-STARK-INDUSTRIES-DALLAS",
+    "priority": { "value": "P3", "name": "Normal" },
+    "status": "WAITING"
+  },
+  {
+    "id": 9,
+    "subject": "Connexion admin depuis 91.108.4.11 (Telegram IP) hors horaires bureaux",
+    "dateCreation": "2024-04-15 03:17",
+    "dateLastUpdate": "2024-04-15 09:30",
+    "category": "Accès suspect",
+    "contract": "FGT-STARK-INDUSTRIES-DALLAS",
+    "priority": { "value": "P2", "name": "Urgent" },
+    "status": "OPEN"
+  },
+  {
+    "id": 10,
+    "subject": "DDoS UDP flood 4,2 Gbps sur 203.0.113.10 — saturation uplink",
+    "dateCreation": "2024-04-16 16:44",
+    "dateLastUpdate": "2024-04-16 18:22",
+    "category": "DDoS",
+    "contract": "BH-STARK-INDUSTRIES",
+    "priority": { "value": "P1", "name": "Critique" },
+    "status": "WAITING"
+  }
+]

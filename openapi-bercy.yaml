@@ -1,0 +1,205 @@
+openapi: 3.0.3
+info:
+  title: Bercy
+  description: Bercy mobile application
+  version: 1.0.0
+
+servers:
+  - url: https://api.bercyprotection.fr/v1
+
+tags:
+  - name: Home
+    description: Tableau de bord
+  - name: Issues
+    description: Gestion des tickets
+  - name: Contracts
+    description: Gestion des contrats
+  - name: Settings
+    description: Paramètres
+  - name: User
+    description: Opérations sur l'utilisateur
+
+paths:
+  /issues/{status}:
+    get:
+      tags:
+        - Issues
+      summary: Liste des tickets
+      description: Liste des tickets
+      operationId: getIssues
+      parameters:
+        - name: status
+          in: path
+          description: Le statut du ticket
+          required: true
+          schema:
+            enum:
+              - open
+              - all
+      responses:
+        200:
+          description: Opération réussite
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Issue'
+
+  /contracts:
+    get:
+      tags:
+        - Contracts
+      summary: Liste des contrats
+      description: Liste des contrats
+      operationId: getContracts
+      responses:
+        200:
+          description: Opération réussite
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Contract'
+
+  /comments/{issueId}:
+    get:
+      tags:
+        - Issues
+      summary: Liste des commentaires
+      description: Commentaires de ticket dans l'ordre descendant
+      operationId: getComments
+      parameters:
+        - name: issueId
+          in: path
+          description: Id de Ticket
+          required: true
+          schema:
+            minimum: 1.0
+            type: integer
+            format: int32
+      responses:
+        200:
+          description: Opération réussite
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Comment'
+
+  /user/login:
+    get:
+      tags:
+        - user
+      summary: Connexion à l'application
+      description: 
+      operationId: loginUser
+      parameters:
+        - name: username
+          in: query
+          description: Nom d'utilisateur
+          required: true
+          schema:
+            type: string
+        - name: password
+          in: query
+          description: Le mot de passe
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: string
+        400:
+          description: Le nom d'utilisateur ou le mdp incorrect
+          content: {}
+
+  /user/logout:
+    get:
+      tags:
+        - user
+      summary: Déconnexion
+      description: 
+      operationId: logoutUser
+      responses:
+        default:
+          description: Opération réussite
+
+components:
+  schemas:
+    Issue:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        subject:
+          type: string
+        contract:
+          type: string
+        dateCreation:
+          type: string
+          format: date-time
+        dateLastUpdate:
+          type: string
+          format: date-time
+        category:
+          type: string
+        status:
+          type: string
+          description: Le statut du ticket
+          enum:
+            - OPEN
+            - WAITING
+            - CLOSED
+        priority:
+          $ref: '#/definitions/Priority'
+
+    Priority:
+      type: object
+      properties:
+        value:
+          type: string
+        name:
+          type: string
+
+    Comment:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        sender:
+          type: string
+        date:
+          type: string
+          format: date-time
+        text:
+          type: string
+
+    Contract:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        value:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        company:
+          type: string
+        dateStart:
+          type: string
+          format: date
+        dateEnd:
+          type: string
+          format: date-time

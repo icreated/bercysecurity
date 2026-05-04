@@ -1,0 +1,740 @@
+{
+  "issues": [
+    {
+      "id": 1,
+      "subject": "Rapport détections malveillantes — 23/06/2024 au 30/06/2024",
+      "dateCreation": "2024-06-23 08:30",
+      "dateLastUpdate": "2024-06-30 14:15",
+      "contract": "BH-STARK-INDUSTRIES",
+      "category": "Détection malveillante",
+      "priority": {
+        "value": "P4",
+        "name": "Modéré"
+      },
+      "status": "WAITING"
+    },
+    {
+      "id": 2,
+      "subject": "CVE-2024-3400 (CVSS 10.0) — PAN-OS RCE sur 10.10.1.56",
+      "dateCreation": "2024-04-12 09:15",
+      "dateLastUpdate": "2024-04-13 11:20",
+      "category": "Vulnérabilité",
+      "contract": "LUNAR-STARK-INDUSTRIES",
+      "priority": {
+        "value": "P3",
+        "name": "Normal"
+      },
+      "status": "WAITING"
+    },
+    {
+      "id": 3,
+      "subject": "Ransomware Ragnar Locker — chiffrement actif sur STARK-WS-042 (10.40.5.5)",
+      "dateCreation": "2024-04-03 02:47",
+      "dateLastUpdate": "2024-04-03 03:12",
+      "category": "Ransomware",
+      "contract": "LUNAR-STARK-INDUSTRIES",
+      "priority": {
+        "value": "P1",
+        "name": "Critique"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": 4,
+      "subject": "Création tunnel VPN IPSec vers Azure (10.130.0.0/16)",
+      "dateCreation": "2024-03-15 10:50",
+      "dateLastUpdate": "2024-03-20 16:00",
+      "category": "Demande",
+      "contract": "FGT-STARK-INDUSTRIES-LYON",
+      "priority": {
+        "value": "P3",
+        "name": "Normal"
+      },
+      "status": "CLOSED"
+    },
+    {
+      "id": 5,
+      "subject": "Brute-force SSH depuis 185.220.101.45 (TOR exit node) — 4 382 tentatives",
+      "dateCreation": "2024-04-10 01:23",
+      "dateLastUpdate": "2024-04-10 07:44",
+      "category": "Intrusion",
+      "contract": "FGT-STARK-INDUSTRIES-LYON",
+      "priority": {
+        "value": "P2",
+        "name": "Urgent"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": 6,
+      "subject": "Phishing — credential harvesting ciblant tony.stark, pepper.potts, h.hogan",
+      "dateCreation": "2024-04-11 14:30",
+      "dateLastUpdate": "2024-04-11 16:05",
+      "category": "Phishing",
+      "contract": "BH-STARK-INDUSTRIES",
+      "priority": {
+        "value": "P2",
+        "name": "Urgent"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": 7,
+      "subject": "Exfiltration DNS suspectée vers 94.142.247.3 (AS47517 — Russie)",
+      "dateCreation": "2024-04-12 23:11",
+      "dateLastUpdate": "2024-04-13 08:00",
+      "category": "Exfiltration",
+      "contract": "LUNAR-STARK-INDUSTRIES",
+      "priority": {
+        "value": "P1",
+        "name": "Critique"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": 8,
+      "subject": "Scan interne massif depuis 10.20.4.87 — mouvement latéral suspecté",
+      "dateCreation": "2024-04-13 11:05",
+      "dateLastUpdate": "2024-04-13 11:30",
+      "category": "Reconnaissance",
+      "contract": "FGT-STARK-INDUSTRIES-DALLAS",
+      "priority": {
+        "value": "P3",
+        "name": "Normal"
+      },
+      "status": "WAITING"
+    },
+    {
+      "id": 9,
+      "subject": "Connexion admin depuis 91.108.4.11 (Telegram IP) hors horaires bureaux",
+      "dateCreation": "2024-04-15 03:17",
+      "dateLastUpdate": "2024-04-15 09:30",
+      "category": "Accès suspect",
+      "contract": "FGT-STARK-INDUSTRIES-DALLAS",
+      "priority": {
+        "value": "P2",
+        "name": "Urgent"
+      },
+      "status": "OPEN"
+    },
+    {
+      "id": 10,
+      "subject": "DDoS UDP flood 4,2 Gbps sur 203.0.113.10 — saturation uplink",
+      "dateCreation": "2024-04-16 16:44",
+      "dateLastUpdate": "2024-04-16 18:22",
+      "category": "DDoS",
+      "contract": "BH-STARK-INDUSTRIES",
+      "priority": {
+        "value": "P1",
+        "name": "Critique"
+      },
+      "status": "WAITING"
+    }
+  ],
+  "contracts": [
+    {
+      "id": 1,
+      "value": "2024CFW80347655",
+      "company": "STARK INDUSTRIES",
+      "dateStart": "2024-01-01",
+      "dateEnd": "2027-01-01",
+      "name": "FGT-STARK-INDUSTRIES-LYON",
+      "type": "LUNAR",
+      "status": "ACTIVE",
+      "sla": 4,
+      "sensors": 3
+    },
+    {
+      "id": 2,
+      "value": "2024CSM33429768",
+      "company": "STARK INDUSTRIES",
+      "dateStart": "2024-01-01",
+      "dateEnd": "2027-01-01",
+      "name": "BH-STARK-INDUSTRIES",
+      "type": "BLACKHOLE",
+      "status": "ACTIVE",
+      "sla": 2,
+      "sensors": 1
+    },
+    {
+      "id": 3,
+      "value": "2024CFW60849513",
+      "company": "STARK INDUSTRIES",
+      "dateStart": "2024-01-01",
+      "dateEnd": "2027-01-01",
+      "name": "FGT-STARK-INDUSTRIES-DALLAS",
+      "type": "LUNAR",
+      "status": "ACTIVE",
+      "sla": 4,
+      "sensors": 2
+    },
+    {
+      "id": 4,
+      "value": "2024CFW72662760",
+      "company": "STARK INDUSTRIES",
+      "dateStart": "2024-01-01",
+      "dateEnd": "2027-01-01",
+      "name": "FGT-STARK-INDUSTRIES-DUSSELDORF",
+      "type": "LUNAR",
+      "status": "ACTIVE",
+      "sla": 8,
+      "sensors": 2
+    },
+    {
+      "id": 5,
+      "value": "2024CYB31674068",
+      "company": "STARK INDUSTRIES",
+      "dateStart": "2024-01-01",
+      "dateEnd": "2027-01-01",
+      "name": "LUNAR-STARK-INDUSTRIES",
+      "type": "SOLAR BELT",
+      "status": "ACTIVE",
+      "sla": 1,
+      "sensors": 8
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "issueId": 4,
+      "sender": "Tony STARK",
+      "date": "2024-03-15 10:21",
+      "text": "Bonjour,\n\nJe n'ai pas encore les IP des infras Azure.\nAzure utilisera les IP 10.130.0.0/16.\nPouvez vous rendre cette plage accessible depuis notre parc client ?\nPour l'instant pas de port particulier, nous ferons du cas par cas.\n\nCordialement,\nTony STARK"
+    },
+    {
+      "id": 2,
+      "issueId": 4,
+      "sender": "BercySecurity SOC",
+      "date": "2024-03-15 14:30",
+      "text": "Bonjour,\n\nNous avons créé l'objet NET_VPN_AZURE et l'avons ajouté aux règles ID#211, ID#213, ID#214.\nLe routage correspondant a été mis à jour.\nMerci de réaliser les tests d'accès pour confirmer le bon fonctionnement.\n\nCordialement,\nLe Support BercySecurity"
+    },
+    {
+      "id": 3,
+      "issueId": 4,
+      "sender": "Tony STARK",
+      "date": "2024-03-20 16:00",
+      "text": "Bonjour,\nLes communications fonctionnent bien.\nMerci pour la rapidité.\n\nCordialement,\nTony STARK"
+    },
+    {
+      "id": 4,
+      "issueId": 3,
+      "sender": "BercySecurity SOC",
+      "date": "2024-04-03 03:05",
+      "text": "ALERTE CRITIQUE — Ransomware Ragnar Locker détecté sur STARK-WS-042 (10.40.5.5).\n\nActions immédiates :\n• Isolation réseau de STARK-WS-042 effectuée (VLAN quarantine)\n• Snapshot forensique lancé\n• 847 fichiers chiffrés confirmés, extension .ragnar\n• Shadow copies supprimées (vssadmin delete)\n• C2 contact vers 77.91.78.118:443 — BLOQUÉ par FW\n\nRecommandation : NE PAS payer la rançon. Restauration depuis backup J-1 possible."
+    },
+    {
+      "id": 5,
+      "issueId": 3,
+      "sender": "Tony STARK",
+      "date": "2024-04-03 03:22",
+      "text": "Confirmé. La machine appartient à Pepper Potts (département R&D).\nElle a ouvert une pièce jointe suspecte reçue par mail il y a 2h.\n3 partages réseau potentiellement impactés :\n  \\\\STARK-SRV-FS-01\\RD\n  \\\\STARK-SRV-FS-01\\Finance\n  \\\\STARK-SRV-FS-01\\Legal\n\nProcédure de crise activée. RSSI informé."
+    },
+    {
+      "id": 6,
+      "issueId": 5,
+      "sender": "BercySecurity SOC",
+      "date": "2024-04-10 07:50",
+      "text": "Brute-force SSH détecté depuis 185.220.101.45 (nœud TOR — AS4766).\n4 382 tentatives entre 01:23 et 06:47. Compte ciblé : root.\nRésultat : ÉCHEC — fail2ban actif.\n\nAction : IP blacklistée sur FGT-STARK-INDUSTRIES-LYON.\nRecommandation : désactiver SSH depuis internet, utiliser VPN uniquement."
+    },
+    {
+      "id": 7,
+      "issueId": 6,
+      "sender": "BercySecurity SOC",
+      "date": "2024-04-11 15:00",
+      "text": "3 emails de phishing ciblés détectés :\n• tony.stark@stark-industries.com — LIEN CLIQUÉ — credentials potentiellement compromis\n• pepper.potts@stark-industries.com — non ouvert\n• h.hogan@stark-industries.com — non ouvert\n\nExpéditeur : ceo@stark-ind.fake (spoofing)\nLien : http://stark-industries.login.harvester.com/oauth\n\nACTION REQUISE : réinitialisation MDP tony.stark + activation MFA obligatoire."
+    },
+    {
+      "id": 8,
+      "issueId": 7,
+      "sender": "BercySecurity SOC",
+      "date": "2024-04-13 08:30",
+      "text": "Exfiltration DNS confirmée depuis STARK-WS-042 (déjà compromis — Ragnar Locker).\n\nMéthode : DNS tunneling vers 94.142.247.3 (AS47517 — Russie)\n14 800 requêtes DNS encodées base64 sur 4h.\nVolume estimé exfiltré : ~180 KB\nContenu décodé : config réseau interne, liste utilisateurs AD.\n\nACTION URGENTE : rotation toutes credentials réseau + clés VPN."
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "timestamp": "2024-04-03T01:12:44Z",
+      "type": "MALWARE",
+      "severity": "CRITICAL",
+      "title": "Ransomware Ragnar Locker — chiffrement de masse détecté",
+      "sourceIp": "10.40.5.5",
+      "sourceCountry": "FR",
+      "destIp": "77.91.78.118",
+      "destPort": 443,
+      "protocol": "HTTPS",
+      "sensor": "EDR-STARK-LYON",
+      "contract": "STARK-LYON",
+      "mitreTactic": "Impact",
+      "mitreTechnique": "T1486 — Data Encrypted for Impact",
+      "count": 1,
+      "raw": "EDR Alert: ransomware.ragnar_locker on STARK-WS-042 pid=4821 encrypted=847 files ext=.ragnar",
+      "issueId": 3
+    },
+    {
+      "id": 2,
+      "timestamp": "2024-04-03T01:08:11Z",
+      "type": "MALWARE",
+      "severity": "CRITICAL",
+      "title": "Suppression des Shadow Copies — ransomware préparation",
+      "sourceIp": "10.40.5.5",
+      "sourceCountry": "FR",
+      "destIp": null,
+      "destPort": null,
+      "protocol": "LOCAL",
+      "sensor": "EDR-STARK-LYON",
+      "contract": "STARK-LYON",
+      "mitreTactic": "Defense Evasion",
+      "mitreTechnique": "T1490 — Inhibit System Recovery",
+      "count": 1,
+      "raw": "Process: vssadmin.exe delete shadows /all /quiet — user=SYSTEM pid=3142",
+      "issueId": 3
+    },
+    {
+      "id": 3,
+      "timestamp": "2024-03-22T14:32:08Z",
+      "type": "NETWORK",
+      "severity": "CRITICAL",
+      "title": "DDoS volumétrique — saturation liaison STARK-DALLAS",
+      "sourceIp": "0.0.0.0",
+      "sourceCountry": "MULTI",
+      "destIp": "203.0.113.50",
+      "destPort": 80,
+      "protocol": "HTTP",
+      "sensor": "NETFLOW-STARK-DALLAS",
+      "contract": "STARK-DALLAS",
+      "mitreTactic": "Impact",
+      "mitreTechnique": "T1498 — Network Denial of Service",
+      "count": 58420,
+      "raw": "NETFLOW: bandwidth=9.8Gbps pps=4200000 src_countries=[CN,RU,BR,ID,US] amplification=DNS",
+      "issueId": 10
+    },
+    {
+      "id": 4,
+      "timestamp": "2024-03-28T02:17:55Z",
+      "type": "AUTH",
+      "severity": "HIGH",
+      "title": "Connexion admin hors horaires — compte privilégié",
+      "sourceIp": "185.176.27.42",
+      "sourceCountry": "UA",
+      "destIp": "10.0.1.20",
+      "destPort": 22,
+      "protocol": "SSH",
+      "sensor": "IPS-STARK-PARIS",
+      "contract": "STARK-PARIS",
+      "mitreTactic": "Initial Access",
+      "mitreTechnique": "T1078 — Valid Accounts",
+      "count": 1,
+      "raw": "sshd: Accepted publickey for admin from 185.176.27.42 port 54221 — 02:17 UTC (outside business hours)",
+      "issueId": 9
+    },
+    {
+      "id": 5,
+      "timestamp": "2024-04-10T01:23:41Z",
+      "type": "AUTH",
+      "severity": "HIGH",
+      "title": "Brute-force SSH depuis nœud TOR",
+      "sourceIp": "185.220.101.45",
+      "sourceCountry": "TOR",
+      "destIp": "10.10.1.10",
+      "destPort": 22,
+      "protocol": "SSH",
+      "sensor": "FW-STARK-LYON",
+      "contract": "STARK-LYON",
+      "mitreTactic": "Credential Access",
+      "mitreTechnique": "T1110.001 — Brute Force: Password Guessing",
+      "count": 4382,
+      "raw": "fail2ban: 4382 failed SSH attempts from 185.220.101.45 targeting root in 5h24m",
+      "issueId": 5
+    },
+    {
+      "id": 6,
+      "timestamp": "2024-04-11T12:44:20Z",
+      "type": "EMAIL",
+      "severity": "HIGH",
+      "title": "Phishing ciblé — credential harvesting Stark Industries",
+      "sourceIp": "91.195.240.98",
+      "sourceCountry": "RO",
+      "destIp": "10.0.0.5",
+      "destPort": 25,
+      "protocol": "SMTP",
+      "sensor": "EMAIL-GW-STARK",
+      "contract": "STARK-PARIS",
+      "mitreTactic": "Initial Access",
+      "mitreTechnique": "T1566.001 — Phishing: Spearphishing Attachment",
+      "count": 3,
+      "raw": "EmailGW: sender=ceo@stark-ind.fake target=tony.stark@stark-industries.com subject='Urgent: Board approval needed' url=http://stark-industries.login.harvester.com/oauth",
+      "issueId": 6
+    },
+    {
+      "id": 7,
+      "timestamp": "2024-04-13T04:02:33Z",
+      "type": "DNS",
+      "severity": "HIGH",
+      "title": "DNS Tunneling — exfiltration de données encodées base64",
+      "sourceIp": "10.40.5.5",
+      "sourceCountry": "FR",
+      "destIp": "94.142.247.3",
+      "destPort": 53,
+      "protocol": "DNS",
+      "sensor": "DNS-STARK-LYON",
+      "contract": "STARK-LYON",
+      "mitreTactic": "Exfiltration",
+      "mitreTechnique": "T1048.003 — Exfiltration Over Unencrypted Non-C2 Protocol",
+      "count": 14800,
+      "raw": "DNS: 14800 TXT queries to *.c2tunnel.net from 10.40.5.5 — base64 payload avg_size=512B entropy=7.8",
+      "issueId": 7
+    },
+    {
+      "id": 8,
+      "timestamp": "2024-02-14T09:11:05Z",
+      "type": "VULN",
+      "severity": "CRITICAL",
+      "title": "CVE-2024-3400 — PAN-OS RCE exploitée (CVSS 10.0)",
+      "sourceIp": "45.83.193.150",
+      "sourceCountry": "CN",
+      "destIp": "10.0.0.1",
+      "destPort": 443,
+      "protocol": "HTTPS",
+      "sensor": "IPS-STARK-DUSSELDORF",
+      "contract": "STARK-DUSSELDORF",
+      "mitreTactic": "Execution",
+      "mitreTechnique": "T1190 — Exploit Public-Facing Application",
+      "count": 1,
+      "raw": "IPS: CVE-2024-3400 exploit attempt on PAN-OS 11.0.2 GlobalProtect — RCE payload detected — BLOCKED",
+      "issueId": 2
+    },
+    {
+      "id": 9,
+      "timestamp": "2024-04-05T11:30:22Z",
+      "type": "AUTH",
+      "severity": "HIGH",
+      "title": "Mouvement latéral — Pass-the-Hash NTLM détecté",
+      "sourceIp": "10.40.5.5",
+      "sourceCountry": "FR",
+      "destIp": "10.0.1.20",
+      "destPort": 445,
+      "protocol": "SMB",
+      "sensor": "EDR-STARK-LYON",
+      "contract": "STARK-LYON",
+      "mitreTactic": "Lateral Movement",
+      "mitreTechnique": "T1550.002 — Use Alternate Authentication Material: Pass the Hash",
+      "count": 7,
+      "raw": "EDR: NTLM hash reuse detected STARK-WS-042 → STARK-SRV-AD-01 | hash=aad3b435b51404eeaad3b435b51404ee",
+      "issueId": 8
+    },
+    {
+      "id": 10,
+      "timestamp": "2024-04-05T11:18:04Z",
+      "type": "NETWORK",
+      "severity": "MEDIUM",
+      "title": "Port scan interne — reconnaissance pré-mouvement latéral",
+      "sourceIp": "10.40.5.5",
+      "sourceCountry": "FR",
+      "destIp": "10.0.0.0/16",
+      "destPort": 0,
+      "protocol": "TCP",
+      "sensor": "IDS-STARK-LYON",
+      "contract": "STARK-LYON",
+      "mitreTactic": "Discovery",
+      "mitreTechnique": "T1046 — Network Service Discovery",
+      "count": 1248,
+      "raw": "Snort: ET SCAN Nmap SYN sweep from 10.40.5.5 — 1248 hosts scanned in 12s — ports 22,80,443,445,3389,8080",
+      "issueId": 8
+    },
+    {
+      "id": 11,
+      "timestamp": "2024-04-07T22:05:17Z",
+      "type": "NETWORK",
+      "severity": "HIGH",
+      "title": "Communication C2 — beacon Cobalt Strike toutes les 60s",
+      "sourceIp": "10.20.3.15",
+      "sourceCountry": "FR",
+      "destIp": "104.21.44.178",
+      "destPort": 443,
+      "protocol": "HTTPS",
+      "sensor": "FW-STARK-PARIS",
+      "contract": "STARK-PARIS",
+      "mitreTactic": "Command and Control",
+      "mitreTechnique": "T1071.001 — Application Layer Protocol: Web Protocols",
+      "count": 1440,
+      "raw": "Proxy: HTTPS beacon 10.20.3.15 → 104.21.44.178:443 interval=60s jitter=5% UA='Mozilla/5.0 (compatible)' — Cobalt Strike profile match",
+      "issueId": null
+    },
+    {
+      "id": 12,
+      "timestamp": "2024-04-08T03:41:59Z",
+      "type": "AUTH",
+      "severity": "CRITICAL",
+      "title": "Élévation de privilèges — token impersonation SYSTEM",
+      "sourceIp": "10.20.3.15",
+      "sourceCountry": "FR",
+      "destIp": null,
+      "destPort": null,
+      "protocol": "LOCAL",
+      "sensor": "EDR-STARK-PARIS",
+      "contract": "STARK-PARIS",
+      "mitreTactic": "Privilege Escalation",
+      "mitreTechnique": "T1134 — Access Token Manipulation",
+      "count": 1,
+      "raw": "EDR: SeDebugPrivilege enabled by user=stark\\jdupont process=cmd.exe → token impersonation SYSTEM pid=8921",
+      "issueId": null
+    },
+    {
+      "id": 13,
+      "timestamp": "2024-04-09T16:22:07Z",
+      "type": "DNS",
+      "severity": "MEDIUM",
+      "title": "DGA — requêtes DNS vers domaines algorithmiquement générés",
+      "sourceIp": "10.30.2.88",
+      "sourceCountry": "FR",
+      "destIp": "8.8.8.8",
+      "destPort": 53,
+      "protocol": "DNS",
+      "sensor": "DNS-STARK-LYON",
+      "contract": "STARK-LYON",
+      "mitreTactic": "Command and Control",
+      "mitreTechnique": "T1568.002 — Dynamic Resolution: Domain Generation Algorithms",
+      "count": 342,
+      "raw": "DNS: 342 NXDOMAIN for random-looking domains avg_entropy=4.2 pattern=DGA family=Emotet suspected",
+      "issueId": null
+    },
+    {
+      "id": 14,
+      "timestamp": "2024-04-12T14:10:44Z",
+      "type": "NETWORK",
+      "severity": "HIGH",
+      "title": "Exfiltration vers Mega.nz — transfert 2.3 GB",
+      "sourceIp": "10.40.5.5",
+      "sourceCountry": "FR",
+      "destIp": "31.216.144.175",
+      "destPort": 443,
+      "protocol": "HTTPS",
+      "sensor": "FW-STARK-LYON",
+      "contract": "STARK-LYON",
+      "mitreTactic": "Exfiltration",
+      "mitreTechnique": "T1567.002 — Exfiltration to Cloud Storage",
+      "count": 1,
+      "raw": "FW: ALLOW 10.40.5.5:54821 → 31.216.144.175:443 bytes_out=2.3GB duration=22min category=cloud-storage site=mega.nz",
+      "issueId": null
+    },
+    {
+      "id": 15,
+      "timestamp": "2024-04-02T23:58:02Z",
+      "type": "MALWARE",
+      "severity": "HIGH",
+      "title": "Extension de fichiers suspecte .ragnar — début chiffrement",
+      "sourceIp": "10.40.5.5",
+      "sourceCountry": "FR",
+      "destIp": null,
+      "destPort": null,
+      "protocol": "LOCAL",
+      "sensor": "EDR-STARK-LYON",
+      "contract": "STARK-LYON",
+      "mitreTactic": "Impact",
+      "mitreTechnique": "T1486 — Data Encrypted for Impact",
+      "count": 34,
+      "raw": "EDR: file rename pattern detected *.ragnar — 34 files in 30s — path=C:\\Users\\pPotts\\Documents\\",
+      "issueId": 3
+    }
+  ],
+  "assets": [
+    {
+      "id": 1,
+      "hostname": "STARK-FW-LYON-01",
+      "ip": "10.10.0.1",
+      "type": "FIREWALL",
+      "os": "FortiOS 7.4.3",
+      "criticality": "CRITICAL",
+      "riskScore": 22,
+      "lastSeen": "2024-04-14T08:00:00Z",
+      "contract": "STARK-LYON",
+      "vulnerabilities": 0,
+      "openIssues": 0,
+      "tags": [
+        "production",
+        "perimeter",
+        "soc-managed"
+      ]
+    },
+    {
+      "id": 2,
+      "hostname": "STARK-SRV-AD-01",
+      "ip": "10.0.1.20",
+      "type": "SERVER",
+      "os": "Windows Server 2022",
+      "criticality": "CRITICAL",
+      "riskScore": 71,
+      "lastSeen": "2024-04-14T07:55:00Z",
+      "contract": "STARK-LYON",
+      "vulnerabilities": 3,
+      "openIssues": 2,
+      "tags": [
+        "active-directory",
+        "domain-controller",
+        "tier0"
+      ]
+    },
+    {
+      "id": 3,
+      "hostname": "STARK-WS-042",
+      "ip": "10.40.5.5",
+      "type": "WORKSTATION",
+      "os": "Windows 10 22H2",
+      "criticality": "HIGH",
+      "riskScore": 98,
+      "lastSeen": "2024-04-03T03:00:00Z",
+      "contract": "STARK-LYON",
+      "vulnerabilities": 7,
+      "openIssues": 4,
+      "tags": [
+        "compromised",
+        "quarantine",
+        "ransomware",
+        "r&d"
+      ]
+    },
+    {
+      "id": 4,
+      "hostname": "STARK-SRV-PAN-01",
+      "ip": "10.0.0.1",
+      "type": "FIREWALL",
+      "os": "PAN-OS 11.0.2",
+      "criticality": "CRITICAL",
+      "riskScore": 85,
+      "lastSeen": "2024-04-14T07:50:00Z",
+      "contract": "STARK-DUSSELDORF",
+      "vulnerabilities": 1,
+      "openIssues": 1,
+      "tags": [
+        "cve-2024-3400",
+        "patch-required",
+        "vpn-gateway"
+      ]
+    },
+    {
+      "id": 5,
+      "hostname": "STARK-FW-DALLAS-01",
+      "ip": "203.0.113.1",
+      "type": "FIREWALL",
+      "os": "FortiOS 7.2.8",
+      "criticality": "CRITICAL",
+      "riskScore": 60,
+      "lastSeen": "2024-04-14T08:00:00Z",
+      "contract": "STARK-DALLAS",
+      "vulnerabilities": 1,
+      "openIssues": 1,
+      "tags": [
+        "production",
+        "ddos-target",
+        "perimeter"
+      ]
+    },
+    {
+      "id": 6,
+      "hostname": "STARK-WS-018",
+      "ip": "10.20.3.15",
+      "type": "WORKSTATION",
+      "os": "Windows 11 23H2",
+      "criticality": "HIGH",
+      "riskScore": 88,
+      "lastSeen": "2024-04-08T04:00:00Z",
+      "contract": "STARK-PARIS",
+      "vulnerabilities": 4,
+      "openIssues": 2,
+      "tags": [
+        "cobalt-strike",
+        "c2-beacon",
+        "finance"
+      ]
+    },
+    {
+      "id": 7,
+      "hostname": "STARK-WS-031",
+      "ip": "10.30.2.88",
+      "type": "WORKSTATION",
+      "os": "Windows 10 21H2",
+      "criticality": "MEDIUM",
+      "riskScore": 45,
+      "lastSeen": "2024-04-13T18:30:00Z",
+      "contract": "STARK-LYON",
+      "vulnerabilities": 5,
+      "openIssues": 0,
+      "tags": [
+        "dga-detected",
+        "hr-department"
+      ]
+    },
+    {
+      "id": 8,
+      "hostname": "STARK-SRV-MAIL-01",
+      "ip": "10.0.2.10",
+      "type": "SERVER",
+      "os": "Exchange Server 2019 CU14",
+      "criticality": "CRITICAL",
+      "riskScore": 55,
+      "lastSeen": "2024-04-14T07:45:00Z",
+      "contract": "STARK-PARIS",
+      "vulnerabilities": 2,
+      "openIssues": 1,
+      "tags": [
+        "mail-gateway",
+        "phishing-target",
+        "internet-exposed"
+      ]
+    },
+    {
+      "id": 9,
+      "hostname": "STARK-SRV-DB-01",
+      "ip": "10.0.3.5",
+      "type": "SERVER",
+      "os": "Ubuntu 22.04 LTS",
+      "criticality": "CRITICAL",
+      "riskScore": 30,
+      "lastSeen": "2024-04-14T07:58:00Z",
+      "contract": "STARK-LYON",
+      "vulnerabilities": 1,
+      "openIssues": 0,
+      "tags": [
+        "database",
+        "postgresql",
+        "backup-daily"
+      ]
+    },
+    {
+      "id": 10,
+      "hostname": "STARK-FW-DUSSELDORF-01",
+      "ip": "10.50.0.1",
+      "type": "FIREWALL",
+      "os": "PAN-OS 10.2.9",
+      "criticality": "HIGH",
+      "riskScore": 40,
+      "lastSeen": "2024-04-14T07:52:00Z",
+      "contract": "STARK-DUSSELDORF",
+      "vulnerabilities": 0,
+      "openIssues": 0,
+      "tags": [
+        "perimeter",
+        "patched"
+      ]
+    },
+    {
+      "id": 11,
+      "hostname": "STARK-SRV-011",
+      "ip": "10.10.5.11",
+      "type": "SERVER",
+      "os": "RHEL 9.3",
+      "criticality": "MEDIUM",
+      "riskScore": 18,
+      "lastSeen": "2024-04-14T07:20:00Z",
+      "contract": "STARK-LYON",
+      "vulnerabilities": 0,
+      "openIssues": 0,
+      "tags": [
+        "monitoring",
+        "prometheus",
+        "internal"
+      ]
+    }
+  ]
+}

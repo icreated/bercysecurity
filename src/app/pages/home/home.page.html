@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <ion-icon name="shield-checkmark-outline" style="vertical-align:middle;margin-right:6px"></ion-icon>
+      BERCYSECURITY — SOC
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding-top">
+
+  <!-- KPI tiles -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">
+        <div class="kpi-tile danger">
+          <div class="kpi-value">{{ criticalEvents }}</div>
+          <div class="kpi-label">Évén. CRITICAL</div>
+        </div>
+      </ion-col>
+      <ion-col size="4">
+        <div class="kpi-tile warning">
+          <div class="kpi-value">{{ openIssues }}</div>
+          <div class="kpi-label">Tickets ouverts</div>
+        </div>
+      </ion-col>
+      <ion-col size="4">
+        <div class="kpi-tile critical">
+          <div class="kpi-value">{{ criticalAssets }}</div>
+          <div class="kpi-label">Actifs critiques</div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Top issue banner -->
+  <ion-card *ngIf="topIssue" class="top-issue-card">
+    <ion-card-content>
+      <div style="display:flex;align-items:center;gap:10px">
+        <ion-icon [appIssuePriority]="topIssue.priority.value" style="font-size:2rem;flex-shrink:0"></ion-icon>
+        <div>
+          <div class="top-issue-label">Ticket prioritaire</div>
+          <div class="top-issue-subject">{{ topIssue.subject }}</div>
+          <div class="top-issue-meta">{{ topIssue.contract }} · {{ topIssue.status }}</div>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Chart 1: Events by severity -->
+  <ion-card class="chart-card">
+    <ion-card-header>
+      <ion-card-subtitle>
+        <ion-icon name="pulse-outline" class="chart-icon danger"></ion-icon>
+        Événements par sévérité
+        <ion-badge color="danger" class="chart-total">{{ eventService.events.length }} total</ion-badge>
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #severityCanvas style="max-height:260px"></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Chart 2: Issues by status -->
+  <ion-card class="chart-card">
+    <ion-card-header>
+      <ion-card-subtitle>
+        <ion-icon name="warning-outline" class="chart-icon warning"></ion-icon>
+        Tickets par statut
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #issuesCanvas style="max-height:160px"></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Chart 3: Top assets by risk score -->
+  <ion-card class="chart-card">
+    <ion-card-header>
+      <ion-card-subtitle>
+        <ion-icon name="server-outline" class="chart-icon"></ion-icon>
+        Top actifs — Risk Score
+        <ion-badge color="danger" class="chart-total">{{ assetService.criticalCount }} critiques</ion-badge>
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #assetsCanvas style="max-height:240px"></canvas>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

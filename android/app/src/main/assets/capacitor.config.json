@@ -1,0 +1,6 @@
+{
+	"appId": "com.bercysecurity.bercy",
+	"appName": "bercy",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

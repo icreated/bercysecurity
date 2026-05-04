@@ -1,0 +1,7 @@
+{
+  "name": "bercy",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

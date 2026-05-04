@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <ion-icon name="pulse-outline"></ion-icon>
+      {{ i18n.t.eventsTitle }}
+    </ion-title>
+    <ion-badge *ngIf="eventService.criticalCount > 0" color="danger" slot="end" style="margin-right:12px">
+      {{ eventService.criticalCount }} CRITICAL
+    </ion-badge>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment value="all" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="all">
+        <ion-label>{{ i18n.t.eventsAll }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="critical">
+        <ion-label>{{ i18n.t.eventsCritical }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="high">
+        <ion-label>{{ i18n.t.eventsHigh }}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+    <ion-item *ngFor="let event of eventService.events" lines="full">
+      <ion-icon [name]="eventService.typeIcon(event.type)" slot="start" [color]="eventService.severityColor(event.severity)"></ion-icon>
+      <ion-label>
+        <h2>{{ event.title }}</h2>
+        <h3>
+          <ion-badge [color]="eventService.severityColor(event.severity)">{{ event.severity }}</ion-badge>
+          &nbsp;
+          <ion-badge color="dark">{{ event.mitreTactic }}</ion-badge>
+        </h3>
+        <p>{{ event.sourceIp }} ({{ event.sourceCountry }}) → {{ event.destIp || 'LOCAL' }}:{{ event.destPort || '—' }}</p>
+        <p>{{ event.sensor }} · {{ event.timestamp | date:'dd/MM/yyyy HH:mm' }}</p>
+        <div *ngIf="showRaw" class="raw-log">
+          <ion-icon name="code-slash-outline" class="raw-icon"></ion-icon>
+          {{ event.raw }}
+        </div>
+      </ion-label>
+      <ion-note slot="end" *ngIf="event.count > 1">×{{ event.count }}</ion-note>
+    </ion-item>
+  </ion-list>
+
+  <ion-text color="medium" *ngIf="eventService.events.length === 0" class="ion-text-center ion-padding">
+    <p>{{ i18n.t.eventsEmpty }}</p>
+  </ion-text>
+</ion-content>
+

@@ -1,0 +1,8 @@
+openapi-processor-mapping: v2 # (1)
+
+options:
+  package-name: io.openapiprocessor.mapping # (2)
+
+map:
+  types:
+    - type: string:date-time => Date

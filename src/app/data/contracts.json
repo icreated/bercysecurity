@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "value": "2024CFW80347655",
+    "company": "STARK INDUSTRIES",
+    "dateStart": "2024-01-01",
+    "dateEnd": "2027-01-01",
+    "name": "FGT-STARK-INDUSTRIES-LYON",
+    "type": "LUNAR",
+    "status": "ACTIVE",
+    "sla": 4,
+    "sensors": 3
+  },
+  {
+    "id": 2,
+    "value": "2024CSM33429768",
+    "company": "STARK INDUSTRIES",
+    "dateStart": "2024-01-01",
+    "dateEnd": "2027-01-01",
+    "name": "BH-STARK-INDUSTRIES",
+    "type": "BLACKHOLE",
+    "status": "ACTIVE",
+    "sla": 2,
+    "sensors": 1
+  },
+  {
+    "id": 3,
+    "value": "2024CFW60849513",
+    "company": "STARK INDUSTRIES",
+    "dateStart": "2024-01-01",
+    "dateEnd": "2027-01-01",
+    "name": "FGT-STARK-INDUSTRIES-DALLAS",
+    "type": "LUNAR",
+    "status": "ACTIVE",
+    "sla": 4,
+    "sensors": 2
+  },
+  {
+    "id": 4,
+    "value": "2024CFW72662760",
+    "company": "STARK INDUSTRIES",
+    "dateStart": "2024-01-01",
+    "dateEnd": "2027-01-01",
+    "name": "FGT-STARK-INDUSTRIES-DUSSELDORF",
+    "type": "LUNAR",
+    "status": "ACTIVE",
+    "sla": 8,
+    "sensors": 2
+  },
+  {
+    "id": 5,
+    "value": "2024CYB31674068",
+    "company": "STARK INDUSTRIES",
+    "dateStart": "2024-01-01",
+    "dateEnd": "2027-01-01",
+    "name": "LUNAR-STARK-INDUSTRIES",
+    "type": "SOLAR BELT",
+    "status": "ACTIVE",
+    "sla": 1,
+    "sensors": 8
+  }
+]

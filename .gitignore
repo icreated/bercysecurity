@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Angular build output
+www/
+dist/
+.angular/
+
+# Environment files with secrets
+# src/environments/environment.prod.ts
+
+# Test & coverage
+coverage/
+
+# IDE
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*

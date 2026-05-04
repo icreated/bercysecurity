@@ -1,0 +1,240 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      <ion-icon name="settings-outline" style="vertical-align:middle;margin-right:6px"></ion-icon>
+      Paramètres
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment [value]="segment" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="ui">
+        <ion-icon name="color-palette-outline"></ion-icon>
+        <ion-label>Interface</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="security">
+        <ion-icon name="shield-outline"></ion-icon>
+        <ion-label>Sécurité</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- ══ TAB UI ══════════════════════════════════════════════════════════ -->
+  <ng-container *ngIf="segment === 'ui'">
+
+    <ion-list-header class="section-header">
+      <ion-label>Apparence</ion-label>
+    </ion-list-header>
+
+    <ion-list inset>
+      <ion-item>
+        <ion-icon name="moon-outline" slot="start" class="item-icon purple"></ion-icon>
+        <ion-label>
+          <h3>Thème sombre</h3>
+          <p>Fond noir, meilleure lisibilité en SOC</p>
+        </ion-label>
+        <ion-toggle slot="end" [checked]="ui.darkMode" (ionChange)="toggleDarkMode($event)" color="primary"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="text-outline" slot="start" class="item-icon blue"></ion-icon>
+        <ion-label>
+          <h3>Taille du texte</h3>
+        </ion-label>
+        <div slot="end" class="font-size-btns">
+          <button class="fs-btn" [class.active]="ui.fontSize === 'small'"  (click)="setFontSize('small')">A</button>
+          <button class="fs-btn" [class.active]="ui.fontSize === 'medium'" (click)="setFontSize('medium')">A</button>
+          <button class="fs-btn lg" [class.active]="ui.fontSize === 'large'"  (click)="setFontSize('large')">A</button>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="reorder-two-outline" slot="start" class="item-icon blue"></ion-icon>
+        <ion-label>
+          <h3>Vue compacte</h3>
+          <p>Densifier les listes de tickets et événements</p>
+        </ion-label>
+        <ion-toggle slot="end" [checked]="ui.compactView" (ionChange)="toggleCompact($event)" color="primary"></ion-toggle>
+      </ion-item>
+    </ion-list>
+
+    <ion-list-header class="section-header">
+      <ion-label>Contenu</ion-label>
+    </ion-list-header>
+
+    <ion-list inset>
+      <ion-item>
+        <ion-icon name="code-slash-outline" slot="start" class="item-icon orange"></ion-icon>
+        <ion-label>
+          <h3>Afficher les logs bruts</h3>
+          <p>Champ <code>raw</code> visible dans les événements</p>
+        </ion-label>
+        <ion-toggle slot="end" [checked]="ui.showRawEvents" (ionChange)="toggleRawEvents($event)" color="warning"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="home-outline" slot="start" class="item-icon blue"></ion-icon>
+        <ion-label>
+          <h3>Onglet par défaut</h3>
+        </ion-label>
+        <ion-select slot="end" [value]="ui.defaultTab" (ionChange)="setDefaultTab($event)"
+                    interface="popover" placeholder="Choisir">
+          <ion-select-option *ngFor="let t of tabOptions" [value]="t.value">{{ t.label }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="language-outline" slot="start" class="item-icon blue"></ion-icon>
+        <ion-label><h3>Langue</h3></ion-label>
+        <div slot="end" class="lang-btns">
+          <button class="lang-btn" [class.active]="ui.language === 'fr'" (click)="setLanguage('fr')">🇫🇷 FR</button>
+          <button class="lang-btn" [class.active]="ui.language === 'en'" (click)="setLanguage('en')">🇬🇧 EN</button>
+        </div>
+      </ion-item>
+    </ion-list>
+
+    <ion-list-header class="section-header">
+      <ion-label>À propos</ion-label>
+    </ion-list-header>
+
+    <ion-list inset>
+      <ion-item>
+        <ion-icon name="information-circle-outline" slot="start" class="item-icon blue"></ion-icon>
+        <ion-label><h3>Version application</h3></ion-label>
+        <ion-note slot="end">{{ appVersion }}</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="cloud-outline" slot="start" class="item-icon blue"></ion-icon>
+        <ion-label><h3>Agent SOC</h3></ion-label>
+        <ion-note slot="end">{{ socAgent }}</ion-note>
+      </ion-item>
+    </ion-list>
+
+  </ng-container>
+
+  <!-- ══ TAB SÉCURITÉ ════════════════════════════════════════════════════ -->
+  <ng-container *ngIf="segment === 'security'">
+
+    <ion-list-header class="section-header">
+      <ion-label>Authentification</ion-label>
+    </ion-list-header>
+
+    <ion-list inset>
+      <ion-item>
+        <ion-icon name="shield-checkmark-outline" slot="start" class="item-icon green"></ion-icon>
+        <ion-label>
+          <h3>Double authentification (MFA)</h3>
+          <p>TOTP / push notification requise à la connexion</p>
+        </ion-label>
+        <ion-toggle slot="end" [checked]="security.mfaEnabled" (ionChange)="toggleMfa($event)" color="success"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="finger-print-outline" slot="start" class="item-icon green"></ion-icon>
+        <ion-label>
+          <h3>Déverrouillage biométrique</h3>
+          <p>Face ID / empreinte pour accéder à l'app</p>
+        </ion-label>
+        <ion-toggle slot="end" [checked]="security.biometricLock" (ionChange)="toggleBiometric($event)" color="success"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="timer-outline" slot="start" class="item-icon orange"></ion-icon>
+        <ion-label>
+          <h3>Timeout de session</h3>
+          <p>Déconnexion automatique après inactivité</p>
+        </ion-label>
+        <ion-select slot="end" [value]="security.sessionTimeout" (ionChange)="setTimeout($event)"
+                    interface="popover">
+          <ion-select-option *ngFor="let t of timeoutOptions" [value]="t.value">{{ t.label }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="lock-closed-outline" slot="start" class="item-icon orange"></ion-icon>
+        <ion-label>
+          <h3>Verrouillage en arrière-plan</h3>
+          <p>Verrouille l'app dès qu'elle passe en background</p>
+        </ion-label>
+        <ion-toggle slot="end" [checked]="security.autoLockOnBackground" (ionChange)="toggleAutoLock($event)" color="warning"></ion-toggle>
+      </ion-item>
+    </ion-list>
+
+    <ion-list-header class="section-header">
+      <ion-label>Protection des données</ion-label>
+    </ion-list-header>
+
+    <ion-list inset>
+      <ion-item>
+        <ion-icon name="eye-off-outline" slot="start" class="item-icon purple"></ion-icon>
+        <ion-label>
+          <h3>Mode incognito</h3>
+          <p>Désactive captures d'écran et aperçu multitâche</p>
+        </ion-label>
+        <ion-toggle slot="end" [checked]="security.incognitoMode" (ionChange)="toggleIncognito($event)" color="tertiary"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="lock-open-outline" slot="start" class="item-icon green"></ion-icon>
+        <ion-label>
+          <h3>TLS Certificate Pinning</h3>
+          <p>Bloque les proxies MitM et certificats non autorisés</p>
+        </ion-label>
+        <ion-toggle slot="end" [checked]="security.tlsPinning" (ionChange)="toggleTls($event)" color="success"></ion-toggle>
+      </ion-item>
+    </ion-list>
+
+    <ion-list-header class="section-header">
+      <ion-label>Alertes & Notifications</ion-label>
+    </ion-list-header>
+
+    <ion-list inset>
+      <ion-item>
+        <ion-icon name="notifications-outline" slot="start" class="item-icon orange"></ion-icon>
+        <ion-label>
+          <h3>Notifications d'alertes</h3>
+          <p>Push pour les nouveaux événements SIEM</p>
+        </ion-label>
+        <ion-toggle slot="end" [checked]="security.alertNotifications" (ionChange)="toggleNotifications($event)" color="warning"></ion-toggle>
+      </ion-item>
+
+      <ion-item [disabled]="!security.alertNotifications">
+        <ion-icon name="warning-outline" slot="start" class="item-icon danger"></ion-icon>
+        <ion-label>
+          <h3>Alertes CRITICAL uniquement</h3>
+          <p>Filtre les notifications HIGH / MEDIUM / LOW</p>
+        </ion-label>
+        <ion-toggle slot="end" [checked]="security.criticalAlertsOnly" (ionChange)="toggleCriticalOnly($event)" color="danger"></ion-toggle>
+      </ion-item>
+    </ion-list>
+
+    <!-- Security score banner -->
+    <div class="security-score-card">
+      <div class="score-label">Score de sécurité</div>
+      <div class="score-value" [class.score-high]="securityScore >= 80"
+                               [class.score-mid]="securityScore >= 50 && securityScore < 80"
+                               [class.score-low]="securityScore < 50">
+        {{ securityScore }}<span class="score-unit">/100</span>
+      </div>
+      <div class="score-bar">
+        <div class="score-fill" [style.width.%]="securityScore"
+             [class.fill-high]="securityScore >= 80"
+             [class.fill-mid]="securityScore >= 50 && securityScore < 80"
+             [class.fill-low]="securityScore < 50"></div>
+      </div>
+      <div class="score-hint">Activez MFA, biométrie et TLS pinning pour maximiser votre score.</div>
+    </div>
+
+  </ng-container>
+
+  <!-- Reset -->
+  <div class="ion-padding">
+    <ion-button expand="block" fill="outline" color="danger" (click)="resetAll()">
+      <ion-icon name="refresh-outline" slot="start"></ion-icon>
+      Réinitialiser les paramètres
+    </ion-button>
+  </div>
+
+</ion-content>

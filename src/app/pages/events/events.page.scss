@@ -1,0 +1,22 @@
+// Events page styles
+
+.raw-log {
+  display: block;
+  margin-top: 6px;
+  padding: 6px 10px;
+  background: rgba(106, 100, 255, 0.08);
+  border-left: 3px solid #6a64ff;
+  border-radius: 0 6px 6px 0;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.7rem;
+  color: #a0a8c0;
+  word-break: break-all;
+  line-height: 1.5;
+
+  .raw-icon {
+    font-size: 0.8rem;
+    margin-right: 4px;
+    color: #6a64ff;
+    vertical-align: middle;
+  }
+}

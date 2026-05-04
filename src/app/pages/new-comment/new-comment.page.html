@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/issue-detail/{{ issue?.id }}"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nouveau Commentaire</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-comment [issue]="issue"></app-comment>
+</ion-content>

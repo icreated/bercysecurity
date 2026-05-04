@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{ i18n.t.issuesTitle }}</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment value="openIssues" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="openIssues">
+        <ion-label>{{ i18n.t.issuesOpen }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="allIssues">
+        <ion-label>{{ i18n.t.issuesAll }}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let issue of issueService.issues">
+    <ion-item button [routerLink]="['/tabs/issue-detail', issue.id]">
+      <ion-icon [appIssuePriority]="issue.priority.value" slot="start"></ion-icon>
+      <ion-label>
+        <h2>{{ issue.contract }}</h2>
+        <h3>{{ issue.status | issueStatus }}</h3>
+        <p>{{ issue.subject }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
