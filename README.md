@@ -1,5 +1,12 @@
 # Bercy
 
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![Ionic](https://img.shields.io/badge/Ionic-3880FF?style=for-the-badge&logo=ionic&logoColor=white)
+![Capacitor](https://img.shields.io/badge/Capacitor-119EFF?style=for-the-badge&logo=capacitor&logoColor=white)
+![iOS](https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=apple&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)
+
 An open-source mobile SOC (Security Operations Center) dashboard built with Ionic + Angular.
 
 Runs in the browser and as native iOS/Android apps via Capacitor.
